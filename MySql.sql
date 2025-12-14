@@ -297,10 +297,18 @@ FROM customers AS o
 JOIN customers AS c
 ON c.customer_id = o.customer_id;
 
---EXCLUSIVE JOINS(Here we want to print the null values)
+--LEFT EXCLUSIVE JOINS(Here we want to print the null values of right table)
 
 SELECT *
 FROM customers AS c
 LEFT JOIN orders AS o
 ON c.customer_id = o.customer_id
 WHERE o.customer_id IS NULL;
+
+--RIGHT ECXLUSIVE JOIN(Here we want to print the null values of left table)
+
+SELECT *
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.customer_id = o.customer_id
+WHERE c.customer_id IS NULL;
