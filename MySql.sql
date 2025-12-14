@@ -305,10 +305,20 @@ LEFT JOIN orders AS o
 ON c.customer_id = o.customer_id
 WHERE o.customer_id IS NULL;
 
---RIGHT ECXLUSIVE JOIN(Here we want to print the null values of left table)
+--RIGHT EXCLUSIVE JOIN(Here we want to print the null values of left table)
 
 SELECT *
 FROM customers AS c
 RIGHT JOIN orders AS o
 ON c.customer_id = o.customer_id
 WHERE c.customer_id IS NULL;
+
+--Nested Queries
+
+SELECT *
+FROM orders
+WHERE amount > (
+    SELECT AVG(amount)
+    FROM orders
+);
+
