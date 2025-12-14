@@ -122,3 +122,51 @@ SELECT COUNT(*) FROM students;
 SELECT AVG(age) FROM students;
 SELECT MAX(fee) FROM courses;
 SELECT SUM(fee) FROM courses;
+
+--GROUP BY and HAVING clause queries(we genereally use group by with aggregate functions and having can be used only with group by)
+
+SELECT city, COUNT(*) AS total_students
+FROM students
+GROUP BY city;
+
+SELECT city, COUNT(*)
+FROM students
+GROUP BY city
+HAVING COUNT(*) > 1;
+
+
+-- UPDATE queries
+UPDATE students
+SET city = 'Bangalore',
+WHERE id = 1;
+
+UPDATE students
+SET age = 23,
+    city = 'Hyderabad'
+WHERE name = 'Maaz';
+
+-- DELETE queries
+DELETE FROM students
+WHERE id = 5;
+
+DELETE FROM students
+WHERE age < 18;
+
+DELETE FROM students;
+
+
+-- ALTER TABLE queries
+ALTER TABLE students
+ADD phone VARCHAR(15);
+
+ALTER TABLE students
+MODIFY phone VARCHAR(20);
+
+ALTER TABLE students
+RENAME COLUMN phone TO mobile;
+
+ALTER TABLE students
+DROP COLUMN mobile;
+
+-- TRUNCATE TABLE queries(removes all data but keeps the table structure)
+TRUNCATE TABLE students;
