@@ -346,6 +346,13 @@ SELECT * FROM view1;
 --INDEXES(Indexes are used to speed up the retrieval of data from a table)
 
 SELECT * FROM accounts;
-
-CREATE INDEX idx_branch ON accounts(branch);
+--(Here we have make index on single col)
+CREATE INDEX idx1 ON accounts(branch);
 SHOW INDEX FROM accounts;
+
+
+--(Here we have made index on multile col)
+CREATE INDEX idx2 ON accounts(branch, balance);
+SHOW INDEX FROM accounts;
+
+DROP INDEX idx2 ON accounts:
