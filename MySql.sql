@@ -135,7 +135,7 @@ GROUP BY city
 HAVING COUNT(*) > 1;
 
 
--- UPDATE queries
+-- UPDATE queries(use - SET SQL_SAFE_UPDATES = 0; to allow updates)
 UPDATE students
 SET city = 'Bangalore',
 WHERE id = 1;
@@ -152,7 +152,7 @@ WHERE id = 5;
 DELETE FROM students
 WHERE age < 18;
 
-DELETE FROM students;
+DELETE FROM students;  --(Deletes all records)
 
 
 -- ALTER TABLE queries
