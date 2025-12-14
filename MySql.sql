@@ -81,3 +81,9 @@ FROM students
 WHERE city = 'Hyderabad'
   AND age >= 22;
 
+SELECT *
+FROM students
+WHERE city = 'Hyderabad'
+   OR age >= 22;
+
+
