@@ -175,7 +175,7 @@ DROP COLUMN mobile;
 TRUNCATE TABLE students;
 
 
---TRANSACTIONS queries(advanced topic)
+--TRANSACTIONS queries(advanced topic).
 
 SELECT @@autocommit; --(to check the current auto commit status)
 
