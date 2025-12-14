@@ -250,7 +250,7 @@ INSERT INTO orders VALUES
 SELECT * FROM customers
 SELECT * FROM orders
 
---INNER JOIN
+--INNER JOIN(ignores non matching records meaning if we have any NAN values it will not be shown in the result)
 
 SELECT *
 FROM customers AS c
@@ -270,3 +270,29 @@ SELECT *
 FROM customers AS c
 RIGHT JOIN orders AS o
 ON c.customer_id = o.customer_id;
+
+--OUTER JOIN(In mysql we can perform outer join by using union of left and right join)
+
+SELECT *
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id
+UNION
+SELECT *
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.customer_id = o.customer_id;
+
+--CROSS JOIN(means cartesian product, it will combine each row of first table with all rows of second table)
+
+SELECT *
+FROM customers
+CROSS JOIN orders;
+
+
+--SELF JOIN(means joining the table with itself)
+
+SELECT *
+FROM customers AS A
+JOIN customers AS B
+ON A.customer_id = B.customer_id;
