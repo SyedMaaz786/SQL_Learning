@@ -113,3 +113,5 @@ WHERE age < 18
 --limit and order by clause queries
 
 SELECT * FROM students LIMIT 2;
+SELECT * FROM students ORDER BY age DESC;
+SELECT * FROM students ORDER BY age ASC;
