@@ -68,7 +68,7 @@ VALUES
 
 SELECT * FROM enrollments
 
---BASIC select queries
+-- SELECT queries
 
 SELECT * FROM students;
 SELECT name, city FROM students;
@@ -110,8 +110,15 @@ FROM students
 WHERE age < 18
    OR city NOT IN ('Delhi', 'Mumbai');
 
---limit and order by clause queries
+--LIMIT and ORDER BY clause queries
 
 SELECT * FROM students LIMIT 2;
 SELECT * FROM students ORDER BY age DESC;
 SELECT * FROM students ORDER BY age ASC;
+
+--AGGREGATE functions queries
+
+SELECT COUNT(*) FROM students;
+SELECT AVG(age) FROM students;
+SELECT MAX(fee) FROM courses;
+SELECT SUM(fee) FROM courses;
