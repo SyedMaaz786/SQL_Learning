@@ -220,3 +220,53 @@ SAVEPOINT after_wallet_topup;
 UPDATE accounts SET balance = balance + 10 WHERE id = 1;
 ROLLBACK TO after_wallet_topup;
 COMMIT;
+
+--JOIN queries(advanced topic)
+
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+INSERT INTO customers VALUES
+(1, 'Syed', 'Mumbai'),
+(2, 'Maaz', 'Delhi'),
+(3, 'Khan', 'Bangalore'),
+(4, 'Pathan', 'Mumbai');
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    amount INT
+);
+
+INSERT INTO orders VALUES
+(101, 1, 500),
+(102, 1, 300),
+(103, 2, 200),
+(104, 5, 700);
+
+SELECT * FROM customers
+SELECT * FROM orders
+
+--INNER JOIN
+
+SELECT *
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.customer_id = o.customer_id;
+
+--LEFT JOIN
+
+SELECT *
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id;
+
+--RIGHT JOIN
+
+SELECT *
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.customer_id = o.customer_id;
