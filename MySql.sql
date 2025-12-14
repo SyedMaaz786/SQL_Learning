@@ -173,3 +173,30 @@ DROP COLUMN mobile;
 
 -- TRUNCATE TABLE queries(removes all data but keeps the table structure)
 TRUNCATE TABLE students;
+
+
+--TRANSACTIONS queries
+
+SELECT @@autocommit; --(to check the current auto commit status)
+
+SET autocommit = 0; --(to disable auto commit)
+
+CREATE DATABASE IF NOT EXISTS bank;
+USE bank;
+
+SHOW DATABASES;
+
+CREATE TABLE accounts (
+    id INT PRIMARY KEY AUTO_INCREMENT, --(auto increment creates unique value for each new record)
+    name VARCHAR(50),
+    balance DECIMAL(10, 2)
+);
+
+INSERT INTO accounts (name, balance) 
+VALUES
+('Syed', 500.00),
+('Maaz', 300.00),
+('Khan', 1000.00)
+
+SELECT * FROM accounts;
+
