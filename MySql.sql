@@ -355,6 +355,20 @@ SHOW INDEX FROM accounts;
 CREATE INDEX idx2 ON accounts(branch, balance);
 SHOW INDEX FROM accounts;
 
-DROP INDEX idx2 ON accounts:
+DROP INDEX idx2 ON accounts;
+
+--Stored Procedures(These are similarly like fnx in python were we can create and call the fnx, here we have procedures which we can create and call)
+--(Also remember for mysql workbench we need to use delimiter to perform procedures check GPT)
+
+CREATE PROCEDURE check_bal(IN acc_id INT)
+BEGIN
+    SELECT balance
+    FROM accounts
+    WHERE id = acc_id;
+END ;
 
 
+CALL check_bal(2);
+
+--(DROP procedure)
+DROP PROCEDURE IF EXISTS check_bal
