@@ -185,12 +185,26 @@ CREATE DATABASE IF NOT EXISTS bank;
 USE bank;
 
 SHOW DATABASES;
-
+--(auto increment creates unique value for each new record)
 CREATE TABLE accounts (
-    id INT PRIMARY KEY AUTO_INCREMENT, --(auto increment creates unique value for each new record)
+    id INT PRIMARY KEY AUTO_INCREMENT, 
     name VARCHAR(50),
     balance DECIMAL(10, 2)
 );
+ALTER TABLE accounts
+ADD branch VARCHAR(50);
+
+UPDATE accounts
+SET branch = 'BLR'
+WHERE name = "Syed";
+
+UPDATE accounts
+SET branch = 'BOM'
+WHERE name = 'Maaz';
+
+UPDATE accounts 
+SET branch = 'DEL'
+WHERE name = 'Khan';
 
 INSERT INTO accounts (name, balance) 
 VALUES
@@ -328,3 +342,10 @@ CREATE VIEW view1 AS
 SELECT customer_id, name FROM customers;
 
 SELECT * FROM view1;
+
+--INDEXES(Indexes are used to speed up the retrieval of data from a table)
+
+SELECT * FROM accounts;
+
+CREATE INDEX idx_branch ON accounts(branch);
+SHOW INDEX FROM accounts;
