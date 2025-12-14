@@ -86,4 +86,26 @@ FROM students
 WHERE city = 'Hyderabad'
    OR age >= 22;
 
+SELECT *
+FROM students
+WHERE city NOT IN ('Delhi', 'Mumbai');
 
+SELECT *
+FROM students
+WHERE age > 21
+  AND city IN ('Delhi', 'Mumbai');
+
+SELECT *
+FROM students
+WHERE age > 21
+   OR city IN ('Delhi', 'Mumbai');
+
+SELECT *
+FROM students
+WHERE age > 21
+  AND city NOT IN ('Delhi', 'Mumbai');
+
+SELECT *
+FROM students
+WHERE age < 18
+   OR city NOT IN ('Delhi', 'Mumbai');
