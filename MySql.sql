@@ -160,6 +160,9 @@ ALTER TABLE students
 ADD phone VARCHAR(15);
 
 ALTER TABLE students
+CHANGE name full_name VARCHAR(150); --(for change we need to specify the datatype and constraints again)
+
+ALTER TABLE students
 MODIFY phone VARCHAR(20);
 
 ALTER TABLE students
