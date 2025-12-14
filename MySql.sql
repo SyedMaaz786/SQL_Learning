@@ -322,3 +322,9 @@ WHERE amount > (
     FROM orders
 );
 
+-- VIEWS(here we create a virtual table with only required columns we need)
+
+CREATE VIEW view1 AS
+SELECT customer_id, name FROM customers;
+
+SELECT * FROM view1;
