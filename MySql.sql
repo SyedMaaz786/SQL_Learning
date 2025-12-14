@@ -175,7 +175,7 @@ DROP COLUMN mobile;
 TRUNCATE TABLE students;
 
 
---TRANSACTIONS queries
+--TRANSACTIONS queries(advanced topic)
 
 SELECT @@autocommit; --(to check the current auto commit status)
 
@@ -200,3 +200,23 @@ VALUES
 
 SELECT * FROM accounts;
 
+--(commit)
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 50 WHERE id = 1;
+UPDATE accounts SET balance = balance - 50 WHERE id = 2;
+COMMIT;
+
+--(rollback)
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 50 WHERE id = 1;
+COMMIT;
+UPDATE accounts SET balance = balance - 50 WHERE id = 2;
+ROLLBACK;
+
+--(savepoint)
+START TRANSACTION;
+UPDATE accounts SET balance = balance + 1000 WHERE id = 1;
+SAVEPOINT after_wallet_topup;
+UPDATE accounts SET balance = balance + 10 WHERE id = 1;
+ROLLBACK TO after_wallet_topup;
+COMMIT;
