@@ -109,3 +109,7 @@ SELECT *
 FROM students
 WHERE age < 18
    OR city NOT IN ('Delhi', 'Mumbai');
+
+--limit and order by clause queries
+
+SELECT * FROM students LIMIT 2;
