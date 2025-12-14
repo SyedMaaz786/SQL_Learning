@@ -293,6 +293,14 @@ CROSS JOIN orders;
 --SELF JOIN(means joining the table with itself)
 
 SELECT *
-FROM customers AS A
-JOIN customers AS B
-ON A.customer_id = B.customer_id;
+FROM customers AS o
+JOIN customers AS c
+ON c.customer_id = o.customer_id;
+
+--EXCLUSIVE JOINS(Here we want to print the null values)
+
+SELECT *
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id
+WHERE o.customer_id IS NULL;
