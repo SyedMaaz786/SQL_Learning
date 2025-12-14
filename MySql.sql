@@ -74,4 +74,10 @@ SELECT * FROM students;
 SELECT name, city FROM students;
 SELECT DISTINCT city FROM students;
 
--- WHERE clause queries(conditions)
+-- WHERE clause queries(conditions
+
+SELECT * 
+FROM students
+WHERE city = 'Hyderabad'
+  AND age >= 22;
+
