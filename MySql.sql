@@ -343,7 +343,7 @@ SELECT customer_id, name FROM customers;
 
 SELECT * FROM view1;
 
---INDEXES(Indexes are used to speed up the retrieval of data from a table)
+--INDEXES(Indexes are used to speed up the retrieval of data from a table, they are speed only on select which is the retrival process on other queries they slow the speed.)
 
 SELECT * FROM accounts;
 --(Here we have make index on single col)
@@ -356,3 +356,5 @@ CREATE INDEX idx2 ON accounts(branch, balance);
 SHOW INDEX FROM accounts;
 
 DROP INDEX idx2 ON accounts:
+
+
