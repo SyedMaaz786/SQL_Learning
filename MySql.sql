@@ -123,7 +123,7 @@ SELECT AVG(age) FROM students;
 SELECT MAX(fee) FROM courses;
 SELECT SUM(fee) FROM courses;
 
---GROUP BY and HAVING clause queries(we genereally use group by with aggregate functions and having can be used only with group by)
+--GROUP BY and HAVING clause queries(we generally use group by with aggregate functions and having can be used only with group by)
 
 SELECT city, COUNT(*) AS total_students
 FROM students
@@ -155,7 +155,7 @@ WHERE age < 18;
 DELETE FROM students;  --(Deletes all records)
 
 
--- ALTER TABLE queries
+-- ALTER TABLE queries (change schema)
 ALTER TABLE students
 ADD phone VARCHAR(15);
 
@@ -327,7 +327,7 @@ RIGHT JOIN orders AS o
 ON c.customer_id = o.customer_id
 WHERE c.customer_id IS NULL;
 
---Nested Queries
+--Sub Queries (Nested Queries)
 
 SELECT *
 FROM orders
