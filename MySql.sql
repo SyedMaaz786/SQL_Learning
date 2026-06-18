@@ -372,3 +372,9 @@ CALL check_bal(2);
 
 --(DROP procedure)
 DROP PROCEDURE IF EXISTS check_bal
+
+
+-- CTE (with is used, check GPT)
+
+
+-- Windows (Over(), Row Number(), Row Rank(), Dense Rank() is used, check GPT)
